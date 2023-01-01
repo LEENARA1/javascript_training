@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="list.css">
+</head>
+<body>
+    <!-- <div class="card-group container">
+        <div class="card">
+          <img src="https://via.placeholder.com/600">
+          <div class="card-body">
+            <h5 id="card-subject">Card title</h5>
+            <p>가격 : <span id="card-price">70000</span></p>
+            <button class="btn btn-danger">주문하기</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://via.placeholder.com/600">
+          <div class="card-body">
+            <h5 id="card-subject1">Card title</h5>
+            <p>가격 : <span id="card-price1">70000</span></p>
+            <button class="btn btn-danger">주문하기</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://via.placeholder.com/600">
+          <div class="card-body">
+            <h5 id="card-subject2">Card title</h5>
+            <p>가격 : <span id="card-price2">70000</span></p>
+            <button class="btn btn-danger">주문하기</button>
+          </div>
+        </div>
+      </div>
+       -->
+
+
+       <form class="container my-5 form-group">
+        <p>상품선택</p>
+        <select class="form-select mt-2">
+          <option>모자</option>
+          <option>셔츠</option>
+          <option>바지</option> 
+        </select>
+    </form>
+
+    <form class="container1 my-5 form-group">
+        <select class="form-select mt-2 show">
+          <option>95</option>
+          <option>100</option>
+        </select>
+    </form>
+
+    <div id="test"></div>
+    <div id="test1"></div>
+
+
+      <script>
+
+
+        fetch('https://codingapple1.github.io/hello.txt')
+        .then(res => res.json())
+        .then(data => {
+          console.log(data)
+        })
+          .catch(error => {
+            console.log(error)
+        })
+
+        var pants = [28, 30, 32, 34];
+
+
+        document.getElementsByClassName('form-select')[0].addEventListener('input', function(){
+          var pl1 = document.getElementsByClassName('form-select')[1].classList
+          var pl2 = document.getElementsByClassName('form-select')[0]
+          var value = pl2.value;
+          var se1 = document.getElementsByClassName('form-select')[1]
+          if (value == '셔츠'){
+            pl1.remove('show');
+          } else { 
+            pl1.add('show');
+          }
+          if (value == '바지'){
+            pl1.remove('show');
+            se1.innerHTML=('');
+            pants.forEach(function(a, i){
+              se1.insertAdjacentHTML(`<option>${i}</option>`)
+            });
+              
+            }
+        });
+
+//         var 출석부 = ['흥민', '영희', '철수', '재석'];
+//         function 이름찾기(name) {
+//           for(var i = 0; i < 4; i += 1) {
+//             if(name == 출석부[i]){
+
+            
+//               console.log('있어요');
+//             }
+//           }
+//         }
+
+// 이름찾기('철수');
+
+        
+        // for(let i = 2; i < 10; i += 1) {
+        //   for(let x = 1; x < 10; x += 1)  {
+        //     console.log(i + '*' + x +'=' + (i*x));
+        //   }
+        // }
+
+
+
+ // var 템플 = `<option>28</option><option>30</option>`;
+            // se1.insertAdjacentHTML('beforeend', 템플);
+            // }else if (value == '셔츠'){
+            //   se1.innerHTML=('');
+            //   var 템 = `<option>95</option><option>100</option>`;
+            // se1.insertAdjacentHTML('beforeend', 템);
+            // }
+
+
+
+
+
+
+
+
+
+
+        // document.getElementById('shirts').addEventListener('click', function() {
+        //     document.getElementsByClassName('container1')[0].classList.remove = 'show';
+        // })
+        // var products = [
+        //   { id : 0, price : 70000, title : 'Blossom Dress' },
+        //   { id : 1, price : 50000, title : 'Springfield Shirt' },
+        //   { id : 2, price : 60000, title : 'Black Monastery' }
+        // ];
+
+    
+
+
+        // document.querySelectorAll('.card-body h5')[0].innerHTML = products[0]['title'];
+        // document.querySelectorAll('.card-body h5')[1].innerHTML = products[1]['title'];
+        // document.querySelectorAll('.card-body h5')[2].innerHTML = products[2]['title'];
+
+        // document.querySelectorAll('.card-body span')[0].innerHTML = products[0]['price'];
+        // document.querySelectorAll('.card-body span')[1].innerHTML = products[1]['price'];
+        // document.querySelectorAll('.card-body span')[2].innerHTML = products[2]['price'];
+
+
+        // console.log(products[1]['price'])
+
+        // 하이 +'안녕'+ 하이
+
+        // console.log(하이 +'안녕'+ 하이)
+
+    </script> 
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</html>

@@ -1,0 +1,13 @@
+.card-group {
+    width: 100%;
+    display: flex;
+}
+
+.card img{
+    width: 100%;
+
+}
+
+.show {
+    display:none;
+}
